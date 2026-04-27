@@ -17,7 +17,9 @@ const fallingLeaves = [
 
 function HomeHero() {
   return (
-    <div id="HomeHero" className="relative overflow-hidden bg-gradient-to-b from-[#C4C466] to-white">
+    <div id="HomeHero" className="relative overflow-x-hidden overflow-y-hidden bg-gradient-to-b from-[#C4C466] to-white">
+
+      {/* Background Effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-full bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_30%),radial-gradient(circle_at_80%_18%,rgba(255,255,255,0.12),transparent_26%),radial-gradient(circle_at_50%_70%,rgba(255,255,255,0.08),transparent_28%)]" />
 
@@ -41,9 +43,13 @@ function HomeHero() {
       </div>
 
       <div className="relative z-[1] lg:min-h-[72vh] max-w-[1440px] mx-auto">
-        <div className="pt-32 md:pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 sm:px-10 md:px-12 2xl:px-0 grid items-center gap-12 lg:grid-cols-2">
-          <div className="max-w-2xl flex-1 text-center lg:text-left">
-            <p className="mx-auto lg:mx-0 w-full max-w-xl flex items-center justify-between rounded-full border border-white/10 bg-slate-800/10 px-4 py-2 text-xs md:text-sm font-medium tracking-[0.25em] text-white/90 uppercase backdrop-blur-sm">
+        <div className="pt-24 sm:pt-28 md:pt-32 lg:pt-44 pb-12 sm:pb-14 lg:pb-20 px-5 sm:px-8 md:px-12 2xl:px-0 grid items-center gap-10 lg:grid-cols-2 overflow-x-hidden">
+
+          {/* TEXT BLOCK */}
+          <div className="w-full max-w-xl mx-auto lg:mx-0 flex-1 text-center lg:text-left overflow-hidden">
+
+            {/* BADGE (now same width as heading) */}
+            <p className="w-full flex flex-wrap items-center justify-center lg:justify-between gap-2 sm:gap-4 rounded-full border border-white/10 bg-slate-800/10 px-2 sm:px-4 py-2 text-[10px] sm:text-xs md:text-sm font-medium tracking-[0.25em] text-white/90 uppercase backdrop-blur-sm">
               <span>Forestry</span>
               <span>•</span>
               <span>Community</span>
@@ -51,14 +57,17 @@ function HomeHero() {
               <span>Sustainability</span>
             </p>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl my-5 font-semibold text-[#6a5a41]/90 leading-tight drop-shadow-[0_3px_18px_rgba(0,0,0,0.18)]">
+            {/* HEADING */}
+            <h1 className="w-full text-3xl sm:text-4xl md:text-5xl lg:text-7xl my-4 sm:my-5 font-semibold text-[#6a5a41]/90 leading-tight break-words drop-shadow-[0_3px_18px_rgba(0,0,0,0.18)]">
               KahutIndo Foundation
             </h1>
 
-            <p className="text-base md:text-lg lg:text-md my-4 font-light max-w-xl text-slate-600/90 leading-relaxed text-justify">
+            {/* DESCRIPTION */}
+            <p className="text-sm sm:text-base md:text-lg my-4 font-light max-w-xl text-slate-600/90 leading-relaxed text-left sm:text-justify">
               Menumbuhkan kerja sama, penguatan kapasitas, dan program keberlanjutan yang selaras dengan ekosistem kehutanan dan masyarakat di sekitarnya.
             </p>
 
+            {/* CTA */}
             <div className="mt-10 lg:mt-14">
               <Link to="/contact-us" className="inline-block group">
                 <div className="eco-cta-premium relative inline-flex items-center justify-center rounded-full p-[1.5px]">
@@ -74,17 +83,21 @@ function HomeHero() {
             </div>
           </div>
 
+          {/* IMAGE BLOCK */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="absolute inset-0 -z-10 rounded-full bg-white/10 blur-3xl" />
-            <div className="relative max-w-xl">
+
+            <div className="relative max-w-xl w-full flex justify-center">
               <div className="absolute inset-x-8 bottom-4 h-8 rounded-full bg-black/10 blur-2xl" />
+
               <img
-                className="relative object-contain h-80 md:h-[28rem] drop-shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
+                className="relative object-contain h-56 sm:h-64 md:h-80 lg:h-[28rem] w-full max-w-[280px] sm:max-w-sm md:max-w-md mx-auto drop-shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
                 src={StartBuilding}
                 alt="Kahutindo Foundation emblem"
               />
             </div>
           </div>
+
         </div>
       </div>
     </div>
