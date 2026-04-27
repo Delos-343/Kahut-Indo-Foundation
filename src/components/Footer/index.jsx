@@ -50,7 +50,7 @@ function Footer() {
               </li>
               <li>
                 <Link to="/our-team" className="hover:underline hover:text-white transition">
-                  About Us
+                  Our Team
                 </Link>
               </li>
               <li>
