@@ -41,14 +41,18 @@ function HomeHero() {
 
             <div className='relative z-[1] lg:min-h-[72vh] max-w-[1440px] mx-auto'>
                 <div className='pt-32 md:pt-36 lg:pt-44 pb-16 lg:pb-20 px-6 sm:px-10 md:px-12 2xl:px-0 grid items-center gap-12 lg:grid-cols-2'>
-                    <div className='max-w-2xl flex-1'>
-                        <p className='inline-flex rounded-full border border-white/10 bg-slate-800/10 px-4 py-1 text-xs md:text-sm font-medium tracking-[0.25em] text-white/90 uppercase backdrop-blur-sm'>
-                            Forestry • Community • Sustainability
+                    <div className='max-w-2xl flex-1 text-center lg:text-left'>
+                        <p className="mx-auto lg:mx-0 w-full max-w-xl flex items-center justify-between rounded-full border border-white/10 bg-slate-800/10 px-4 py-2 text-xs md:text-sm font-medium tracking-[0.25em] text-white/90 uppercase backdrop-blur-sm">
+                            <span> Forestry </span>
+                            <span> • </span>
+                            <span> Community </span>
+                            <span> • </span>
+                            <span> Sustainability </span>
                         </p>
-                        <h1 className='text-3xl md:text-5xl lg:text-7xl my-5 font-semibold text-[#6a5a41]/90 leading-tight drop-shadow-[0_3px_18px_rgba(0,0,0,0.18)]'>
+                        <h1 className='text-5xl md:text-6xl lg:text-7xl my-5 font-semibold text-[#6a5a41]/90 leading-tight drop-shadow-[0_3px_18px_rgba(0,0,0,0.18)]'>
                             KahutIndo Foundation
                         </h1>
-                        <p className='text-base md:text-lg lg:text-md my-4 font-light max-w-xl text-slate-600/90 leading-relaxed'>
+                        <p className='text-base md:text-lg lg:text-md my-4 font-light max-w-xl text-slate-600/90 leading-relaxed text-justify'>
                             Menumbuhkan kerja sama, penguatan kapasitas, dan program keberlanjutan yang selaras dengan ekosistem kehutanan dan masyarakat di sekitarnya.
                         </p>
                         <div className='mt-10 lg:mt-14 transition duration-200 ease-in-out hover:transform hover:translate-y-[-3px]'>

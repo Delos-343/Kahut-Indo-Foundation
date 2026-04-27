@@ -63,7 +63,7 @@ function Navbar() {
 
     return (
         <>
-            <div className={`fixed z-20 w-full transition-colors duration-300 ${isScrolled || isOpen ? 'bg-[#C4C466] shadow-md' : 'bg-[#C4C466]'}`}>
+            <div className={`fixed z-20 w-full transition-colors duration-300 ${isScrolled || isOpen ? 'bg-[#C4C466] shadow-md' : 'bg-transparent'}`}>
                 <div className="flex justify-between items-center px-6 md:px-12 2xl:px-0 max-w-[1440px] mx-auto h-16">
                     <div className="flex-shrink-0">
                         <Link to="/" onClick={() => { setIsOpen(false); closeAllDesktopSubmenus(); }}>
