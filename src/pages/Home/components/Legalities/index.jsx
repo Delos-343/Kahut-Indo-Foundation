@@ -1,6 +1,21 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import ProgrammerImage from '../../../../assets/image_3.jpg'
 
+const laws = [
+  {
+    text: 'Notary Deed No. 400 by Public Notary Herman Soesilo, dated 11 December 2024.',
+  },
+  {
+    text: 'Registered with the Ministry of Law and Human Rights of the Republic of Indonesia (Kemenkumham) under No. AHU-0019936.AH.01.04, dated 16 December 2024, for the establishment of Yayasan Karsa Hutani Terra Indonesia (Yayasan Kahutindo).',
+  },
+  {
+    text: 'Tax Registration Number (NPWP): 1000 0000 0053 4852',
+  },
+  {
+    text: 'Business Identification Number (NIB): 0303250053139',
+  },
+]
+
 function HomeLegalities() {
   const reduceMotion = useReducedMotion()
 
@@ -53,19 +68,21 @@ function HomeLegalities() {
           </p>
         </motion.div>
 
-        <div className="pt-14 md:pt-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="pt-14 md:pt-20 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center justify-items-center">
           <motion.div
             initial={reduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.96 }}
             whileInView={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.55 }}
             transition={{ duration: reduceMotion ? 0.01 : 1, ease: 'easeOut' }}
-            className="flex justify-center"
+            className="w-full max-w-[560px] flex justify-center"
           >
-            <img
-              className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-lg"
-              src={ProgrammerImage}
-              alt="Legal Illustration"
-            />
+            <div className="w-full rounded-3xl bg-white/40 p-6 md:p-8 shadow-lg ring-1 ring-black/5 backdrop-blur-sm">
+              <img
+                className="w-full h-[280px] md:h-[340px] object-cover rounded-2xl"
+                src={ProgrammerImage}
+                alt="Legal Illustration"
+              />
+            </div>
           </motion.div>
 
           <motion.ul
@@ -73,47 +90,20 @@ function HomeLegalities() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.55 }}
-            className="space-y-5 text-gray-700"
+            className="w-full max-w-[560px] space-y-5 text-gray-700"
           >
-            <motion.li
-              variants={itemVariants}
-              className="flex gap-4 rounded-2xl bg-white/50 px-4 py-4 shadow-sm ring-1 ring-black/5"
-            >
-              <span className="mt-2 h-3 w-3 rounded-full bg-[#6d8442] shrink-0 shadow-[0_0_0_6px_rgba(109,132,66,0.12)]" />
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed">
-                Notary Deed No. 400 by Public Notary Herman Soesilo, dated 11 December 2024.
-              </p>
-            </motion.li>
-
-            <motion.li
-              variants={itemVariants}
-              className="flex gap-4 rounded-2xl bg-white/50 px-4 py-4 shadow-sm ring-1 ring-black/5"
-            >
-              <span className="mt-2 h-3 w-3 rounded-full bg-[#6d8442] shrink-0 shadow-[0_0_0_6px_rgba(109,132,66,0.12)]" />
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed">
-                Registered with the Ministry of Law and Human Rights of the Republic of Indonesia (Kemenkumham) under No: AHU-0019936.AH.01.04 in 2024, dated 16 December 2024, for the establishment of Yayasan Karsa Hutani Terra Indonesia (Yayasan Kahutindo).
-              </p>
-            </motion.li>
-
-            <motion.li
-              variants={itemVariants}
-              className="flex gap-4 rounded-2xl bg-white/50 px-4 py-4 shadow-sm ring-1 ring-black/5"
-            >
-              <span className="mt-2 h-3 w-3 rounded-full bg-[#6d8442] shrink-0 shadow-[0_0_0_6px_rgba(109,132,66,0.12)]" />
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed">
-                Tax Registration Number (NPWP): 1000 0000 0053 4852
-              </p>
-            </motion.li>
-
-            <motion.li
-              variants={itemVariants}
-              className="flex gap-4 rounded-2xl bg-white/50 px-4 py-4 shadow-sm ring-1 ring-black/5"
-            >
-              <span className="mt-2 h-3 w-3 rounded-full bg-[#6d8442] shrink-0 shadow-[0_0_0_6px_rgba(109,132,66,0.12)]" />
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed">
-                Business Identification Number (NIB): 0303250053139
-              </p>
-            </motion.li>
+            {laws.map((law, index) => (
+              <motion.li
+                key={index}
+                variants={itemVariants}
+                className="flex gap-4 rounded-2xl bg-white/50 px-5 py-5 shadow-sm ring-1 ring-black/5"
+              >
+                <span className="mt-2 h-3 w-3 rounded-full bg-[#6d8442] shrink-0 shadow-[0_0_0_6px_rgba(109,132,66,0.12)]" />
+                <p className="text-base md:text-lg lg:text-xl leading-relaxed">
+                  {law.text}
+                </p>
+              </motion.li>
+            ))}
           </motion.ul>
         </div>
       </div>

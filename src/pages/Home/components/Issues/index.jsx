@@ -1,64 +1,69 @@
 import Dots from '../../../../assets/dots.png'
 
-// Placeholder Icon component (replace with your actual icon component/library)
 const PlaceholderIcon = () => (
-    <svg
-        className="w-6 h-6 text-[#7f8050] mr-3 flex-shrink-0" // Adjust size and color as needed
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+  <svg
+    className="w-6 h-6 text-[#6d8442] flex-shrink-0 mt-[3px]"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+    />
+  </svg>
+)
+
+function Issues() {
+  const issues = [
+    'Lack of clarity in decision-making processes',
+    'Slow development and adoption of new initiatives',
+    'Difficulty coordinating multi-stakeholder efforts',
+    'Limited funding for sustainable ecosystem programs',
+  ]
+
+  return (
+    <div
+      id="Issues"
+      className="relative py-20 md:py-28"
+      style={{
+        backgroundImage: `url(${Dots})`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'contain',
+      }}
     >
-        <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            // Example using a simple circle or checkmark, replace path data with your icon
-            // d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" // Checkmark circle example
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" // Simple circle example
-        />
-    </svg>
-);
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-12 2xl:px-0">
 
-function Issues() { // Renamed component for clarity
-    const issues = [
-        'Lack of clarity on decision-making processes',
-        'Slow development and adoption of new features',
-        'Difficulty in coordinating community efforts',
-        'Inadequate funding for ecosystem projects',
-    ];
+        {/* Title */}
+        <div className="text-center max-w-2xl mx-auto">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#20311d]">
+            Issues Addressed
+          </h3>
+          <p className="mt-4 text-gray-500 text-sm md:text-base leading-relaxed">
+            Key challenges in forestry ecosystems and community collaboration that the foundation aims to address.
+          </p>
+        </div>
 
-    return (
-        <>
-            <div className="pt-24 md:pt-32 pb-16 text-center px-6 sm:px-12 md:px-24 lg:px-36">
-                {/* Logo */}
-                {/* <img
-                    className="h-48 sm:h-56 md:h-64 inline-block mb-8"
-                    src={RevoLogo}
-                    alt="Revo Foundation Logo"
-                /> */}
-                {/* Main Title */}
-                <h3 className="text-3xl md:text-4xl font-semibold mt-6 mb-12 text-cyan-800">
-                    Issues Addressed by the Foundation
-                </h3>
-
-                {/* Issues List Section */}
-                <div className="mt-8 text-left max-w-4xl mx-auto"> {/* Adjusted top margin */}
-                    {/* Removed the subheading from here */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                        {issues.map((issue, index) => (
-                            <div key={index} className="flex items-start p-3">
-                                <PlaceholderIcon />
-                                <span className="text-base md:text-lg text-gray-600">
-                                    {issue}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+        {/* Issues Grid */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          {issues.map((issue, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-3 rounded-2xl bg-white/60 backdrop-blur-sm p-5 shadow-sm ring-1 ring-black/5"
+            >
+              <PlaceholderIcon />
+              <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
+                {issue}
+              </p>
             </div>
-        </>
-    );
+          ))}
+        </div>
+
+      </div>
+    </div>
+  )
 }
 
-export default Issues; // Export the renamed component
+export default Issues
