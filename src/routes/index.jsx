@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import ContactUs from '../pages/ContactUs';
@@ -21,14 +21,18 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/about-us/experts" element={<Experts />} />
-            <Route path="/about-us/governance" element={<Governance />} />
+            <Route path="/about-us/experts" element={<Navigate to="/expert-teams" replace />} />
+            <Route path="/about-us/governance" element={<Navigate to="/our-team" replace />} />
+            <Route path="/expert-teams" element={<Experts />} />
+            <Route path="/our-team" element={<Governance />} />
             <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/product/business-fields" element={<BusinessFields/>} />
+            <Route path="/product/business-fields" element={<Navigate to="/products/business-field" replace />} />
+            <Route path="/products/business-field" element={<BusinessFields/>} />
             <Route path="/product/strategic-program/ecosystem" element={<ProgramEcosystem />} />
             <Route path="/product/strategic-program/workers-dev" element={<WorkersEducation />} />
             <Route path="/product/strategic-program/industrial-training" element={<IndustrialCapacity />} />
-            <Route path="/product/strategic-program/fund-mgmtg" element={<FundAsset />} />
+            <Route path="/product/strategic-program/fund-mgmt" element={<FundAsset />} />
+            <Route path="/product/strategic-program/fund-mgmtg" element={<Navigate to="/product/strategic-program/fund-mgmt" replace />} />
             <Route path="/product/strategic-program/ecolabel-env" element={<EcoClimateEnvironment />} />
             <Route path="/product/strategic-program/legal-adr" element={<LegalAidDisputeResolution />} />
             <Route path="*" element={<NotFound />} />

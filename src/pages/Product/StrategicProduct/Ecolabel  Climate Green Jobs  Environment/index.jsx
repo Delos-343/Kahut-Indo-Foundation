@@ -1,5 +1,5 @@
+import React from "react";
 
-// Data aktivitas dari gambar Ecolabel, Climate, Green Jobs & Environment
 const environmentItems = [
   "Research & data analysis on social-related impacts of climate & industries",
   "Trainings of Forest Management, Unions and Local Communities on Forest Certification",
@@ -8,57 +8,52 @@ const environmentItems = [
   "Capacity Building of Stakeholders and Rights holders in Forest Operations for Social Dialogue",
   "Carbon-offset Projects: restoration of degraded lands and community development",
   "Education on domestic waste management & circular economy",
-  "Education on sustainable farming"
+  "Education on sustainable farming",
 ];
 
-/**
- * Komponen untuk menampilkan daftar aktivitas Ecolabel, Climate, Green Jobs & Environment
- * dalam tabel dengan latar belakang gradien spesifik.
- */
-// Nama fungsi dibuat lebih ringkas agar mudah dibaca, namun Anda bisa tetap menggunakan nama panjang jika mau.
-function EcoClimateEnvironment() { // Anda bisa juga menamakannya EcolabelClimateGreenJobsEnvironment jika ingin sama persis dengan judul
+function EcoClimateEnvironment() {
   return (
-    // Container utama dengan background gradient, padding, dan layout flex
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-[#C4C466] to-[#fcfaf5] p-6 pt-20"> {/* pt-20 untuk jarak dari atas */}
+    <div className="min-h-screen bg-gradient-to-b from-[#b6ae72] to-[#f7f3e8] px-4 py-20 sm:px-6 md:px-8 lg:px-12">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center pt-8 md:pt-12">
+        <h2 className="mb-8 text-center text-3xl font-semibold text-gray-800 sm:text-4xl">
+          Ecolabel, Climate, Green Jobs & Environment
+        </h2>
 
-      {/* Judul Halaman/Bagian (sesuai gambar) */}
-      <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 text-center mb-8">
-        Ecolabel, Climate, Green Jobs & Environment
-      </h2>
+        <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-white/60 bg-white/70 shadow-xl backdrop-blur-sm">
+          <div className="overflow-x-auto">
+            <table className="min-w-full border-collapse">
+              <thead className="bg-[#8a8b5a]">
+                <tr>
+                  <th className="w-20 px-4 py-4 text-center text-sm font-semibold uppercase tracking-wide text-white">
+                    No.
+                  </th>
+                  <th className="px-4 py-4 text-left text-sm font-semibold uppercase tracking-wide text-white">
+                    Program / Initiative
+                  </th>
+                </tr>
+              </thead>
 
-      {/* Container untuk Tabel agar bisa dibatasi lebarnya */}
-      <div className="w-full max-w-4xl overflow-x-auto"> {/* max-w-4xl membatasi lebar tabel, overflow-x-auto untuk layar kecil */}
-
-        {/* Tabel untuk menampilkan data */}
-        {/* Styling tabel dibuat konsisten dengan komponen sebelumnya */}
-        <table className="w-full bg-white bg-opacity-60 rounded-lg shadow-md border border-gray-300">
-          {/* Kepala Tabel (Header) */}
-          <thead className="bg-white bg-opacity-80">
-            <tr>
-              <th className="p-3 text-center font-semibold text-gray-700 border-b border-gray-300 w-16">No.</th>
-              <th className="p-3 text-left font-semibold text-gray-700 border-b border-gray-300">Program / Initiative</th> {/* Ubah judul kolom jika perlu */}
-            </tr>
-          </thead>
-
-          {/* Badan Tabel (Body) */}
-          <tbody>
-            {/* Melakukan iterasi (looping) pada array environmentItems */}
-            {environmentItems.map((item, index) => (
-              // Setiap baris (tr) harus memiliki key unik
-              <tr key={index} className="hover:bg-white/50 even:bg-white/30 transition-colors duration-150">
-                {/* Kolom Nomor */}
-                <td className="p-3 text-center border-b border-gray-300">{index + 1}</td>
-                {/* Kolom Nama Aktivitas/Item */}
-                <td className="p-3 text-left border-b border-gray-300">{item}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+              <tbody className="divide-y divide-[#ddd7c4]">
+                {environmentItems.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="transition-colors duration-150 even:bg-white/50 hover:bg-white/80"
+                  >
+                    <td className="px-4 py-4 text-center text-sm font-medium text-gray-700">
+                      {index + 1}
+                    </td>
+                    <td className="px-4 py-4 text-sm leading-6 text-gray-700">
+                      {item}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-
     </div>
   );
 }
 
-// Pastikan nama export sesuai dengan nama fungsi Anda
-export default EcoClimateEnvironment; // atau export default EcolabelClimateGreenJobsEnvironment;
+export default EcoClimateEnvironment;

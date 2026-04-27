@@ -9,7 +9,7 @@ function HomeLegalities() {
             <div id="HomeLegalities">
                 <div className='max-w-[1440px] mx-auto pt-10 pb-24 px-12 2xl:px-0'>
                     <div className="text-center">
-                        <h2 className="drop-shadow-md text-2xl md:text-3xl lg:text-4xl font-semibold text-indigo-950">Legalities</h2>
+                        <h2 className="drop-shadow-md text-2xl md:text-3xl lg:text-4xl font-semibold text-[#20311d]">Legalities</h2>
                     </div>
                     <div className="lg:px-0 pt-16 md:pt-24">
                         <div className='lg:flex-1 flex lg:flex-column justify-center lg:items-center mb-8'>

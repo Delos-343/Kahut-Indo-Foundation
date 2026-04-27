@@ -17,60 +17,60 @@ function HomeWhyUs() {
     return (
         <>
             <div id="HomeWhyUs" className='max-w-[1440px] mx-auto px-12 2xl:px-0 py-10' style={{ backgroundImage: `url(${Dots})`, backgroundRepeat: 'repeat', backgroundSize: 'contain' }}>
-                <h2 className="drop-shadow-md text-center text-2xl md:text-3xl lg:text-4xl font-semibold text-indigo-950 py-12">Beneficiaries</h2>
+                <h2 className="drop-shadow-md text-center text-2xl md:text-3xl lg:text-4xl font-semibold text-[#20311d] py-12">Beneficiaries</h2>
                 <div className="flex flex-wrap justify-center">
                     {/* Container untuk setiap item beneficiary - mengatur layout grid */}
                     <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
                         {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
                             {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
                             <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={WorkersIcon} alt="Workers Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-indigo-950 mb-4">Workers & Families</h3>
-                            <p className="text-sm lg:text-base text-center text-gray-600">Workers, union members and their families</p>
+                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Workers & Families</h3>
+                            <p className="text-sm lg:text-base text-center text-slate-600">Workers, union members and their families</p>
                         </div>
                     </div>
 
                     {/* Container untuk setiap item beneficiary - mengatur layout grid */}
                     <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
                         {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
                             {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
                             <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={LocalIcon} alt="Local Communities Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-indigo-950 mb-4">Local Communities</h3>
-                            <p className="text-sm lg:text-base text-center text-gray-600">Local communities</p>
+                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Local Communities</h3>
+                            <p className="text-sm lg:text-base text-center text-slate-600">Local communities</p>
                         </div>
                     </div>
 
                     {/* Container untuk setiap item beneficiary - mengatur layout grid */}
                     <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
                          {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
                              {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
                             <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={IndigenousIcon} alt="Indigenous Peoples Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-indigo-950 mb-4">Indigenous Peoples</h3>
-                            <p className="text-sm lg:text-base text-center text-gray-600">Indigenous peoples’ groups</p>
+                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Indigenous Peoples</h3>
+                            <p className="text-sm lg:text-base text-center text-slate-600">Indigenous peoples’ groups</p>
                         </div>
                     </div>
 
                     {/* Container untuk setiap item beneficiary - mengatur layout grid */}
                     <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
                          {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
                             {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
                             <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={StakeHolderIcon} alt="Industry Players Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-indigo-950 mb-4">Industry Players</h3>
-                            <p className="text-sm lg:text-base text-center text-gray-600">Industry players and stakeholders</p>
+                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Industry Players</h3>
+                            <p className="text-sm lg:text-base text-center text-slate-600">Industry players and stakeholders</p>
                         </div>
                     </div>
 
                     {/* Container untuk setiap item beneficiary - mengatur layout grid */}
                     <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
                          {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
                             {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
                             <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={GovernmentIcon} alt="Government Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-indigo-950 mb-4">Government</h3>
-                            <p className="text-sm lg:text-base text-center text-gray-600">Government</p>
+                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Government</h3>
+                            <p className="text-sm lg:text-base text-center text-slate-600">Government</p>
                         </div>
                     </div>
                 </div>

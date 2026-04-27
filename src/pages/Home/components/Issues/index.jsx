@@ -3,7 +3,7 @@ import Dots from '../../../../assets/dots.png'
 // Placeholder Icon component (replace with your actual icon component/library)
 const PlaceholderIcon = () => (
     <svg
-        className="w-6 h-6 text-cyan-600 mr-3 flex-shrink-0" // Adjust size and color as needed
+        className="w-6 h-6 text-[#7f8050] mr-3 flex-shrink-0" // Adjust size and color as needed
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

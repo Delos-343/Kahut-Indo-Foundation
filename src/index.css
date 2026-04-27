@@ -33,3 +33,205 @@ html {
 .marquee-item{
     margin: 0px 50px;
 }
+
+.falling-leaf {
+    position: absolute;
+    will-change: transform, opacity;
+    animation-name: leaf-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes leaf-fall {
+    0% {
+        transform: translate3d(0, -12vh, 0) rotate(var(--leaf-rotate, 0deg));
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate3d(calc(var(--leaf-drift, 40px) * 0.5), 54vh, 0) rotate(calc(var(--leaf-rotate, 0deg) + 180deg));
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate3d(var(--leaf-drift, 40px), 118vh, 0) rotate(calc(var(--leaf-rotate, 0deg) + 360deg));
+        opacity: 0;
+    }
+}
+
+
+.contact-card {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --lift: 0px;
+    transform: perspective(1000px) translate3d(0, var(--lift), 0) rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+    transition: transform 520ms cubic-bezier(0.2, 1, 0.25, 1), box-shadow 520ms cubic-bezier(0.2, 1, 0.25, 1), background-color 520ms ease, border-color 520ms ease, color 520ms ease;
+    transform-style: preserve-3d;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(182, 174, 114, 0.22), transparent 45%);
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+}
+
+.contact-card:hover::before,
+.contact-card:focus-visible::before {
+    opacity: 1;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+    border-color: rgba(182, 174, 114, 0.28);
+}
+
+.contact-card::after {
+    content: '';
+    position: absolute;
+    inset: -40% -30%;
+    background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+    transform: translateX(-45%) rotate(10deg);
+    opacity: 0;
+    transition: opacity 350ms ease;
+    pointer-events: none;
+}
+
+.contact-card:hover::after,
+.contact-card:focus-visible::after {
+    opacity: 1;
+    animation: wind-sweep 2.8s ease-in-out infinite;
+}
+
+.contact-card__wind {
+    background:
+        radial-gradient(circle at 20% 65%, rgba(109, 140, 101, 0.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 48% 38%, rgba(182, 174, 114, 0.26) 0 1.5px, transparent 3px),
+        radial-gradient(circle at 76% 55%, rgba(109, 140, 101, 0.25) 0 2px, transparent 3px),
+        linear-gradient(105deg, transparent 18%, rgba(109, 140, 101, 0.12) 32%, rgba(109, 140, 101, 0.28) 48%, rgba(182, 174, 114, 0.15) 58%, transparent 74%);
+    background-size: 180% 180%;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    animation: leaf-breeze 6.5s ease-in-out infinite;
+}
+
+.contact-card:hover .contact-card__wind,
+.contact-card:focus-visible .contact-card__wind {
+    opacity: 0.85;
+}
+
+.contact-card > .relative.z-10,
+.contact-card > .relative {
+    transition: transform 500ms cubic-bezier(0.2, 1, 0.25, 1), color 500ms cubic-bezier(0.2, 1, 0.25, 1);
+    transform: translateZ(20px);
+}
+
+.contact-card:hover > .relative.z-10,
+.contact-card:focus-visible > .relative.z-10 {
+    transform: translateZ(20px) translateY(-2px);
+}
+
+@keyframes wind-sweep {
+    0% {
+        transform: translateX(-48%) rotate(10deg);
+    }
+    100% {
+        transform: translateX(48%) rotate(10deg);
+    }
+}
+
+@keyframes leaf-breeze {
+    0%, 100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(5%) translateY(-2%) rotate(2deg);
+    }
+}
+
+
+.contact-wind-field {
+    isolation: isolate;
+}
+
+.contact-wind-orbit,
+.contact-wind-sweep {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+    will-change: transform, opacity;
+}
+
+.contact-wind-orbit {
+    border: 1px solid rgba(109, 140, 101, 0.18);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    filter: blur(0.35px);
+    animation: wind-orbit 12s ease-in-out infinite;
+}
+
+.contact-wind-orbit--reverse {
+    animation-direction: reverse;
+}
+
+.contact-wind-sweep {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(109, 140, 101, 0.08) 18%, rgba(109, 140, 101, 0.34) 50%, rgba(182, 174, 114, 0.18) 62%, transparent 100%);
+    filter: blur(0.7px);
+    transform-origin: center;
+    animation: wind-sweep-main 10s ease-in-out infinite;
+}
+
+.contact-wind-sweep::before,
+.contact-wind-sweep::after {
+    content: '';
+    position: absolute;
+    inset: -2px 0;
+    border-radius: 9999px;
+    background: inherit;
+    opacity: 0.6;
+}
+
+.contact-wind-sweep::before {
+    transform: translateY(-6px) rotate(3deg);
+}
+
+.contact-wind-sweep::after {
+    transform: translateY(6px) rotate(-3deg);
+    opacity: 0.35;
+}
+
+.contact-wind-sweep--reverse {
+    animation-direction: reverse;
+}
+
+@keyframes wind-orbit {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(-10deg) scale(1);
+        opacity: 0.30;
+    }
+    50% {
+        transform: translate3d(1.4rem, -0.9rem, 0) rotate(8deg) scale(1.03);
+        opacity: 0.58;
+    }
+}
+
+@keyframes wind-sweep-main {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(-6deg) scaleX(1);
+        opacity: 0.22;
+    }
+    50% {
+        transform: translate3d(1.2rem, -0.6rem, 0) rotate(7deg) scaleX(1.05);
+        opacity: 0.5;
+    }
+}
