@@ -1,82 +1,153 @@
-// import FreshIdea from '../../../../assets/undraw_lightbulb_moment_re_ulyo.svg';
-// import CuttingEdge from '../../../../assets/undraw_programmer_re_owql.svg';
-// import SeriousGroup from '../../../../assets/undraw_solution_mindset_re_57bf.svg';
-// import CustomerReview from '../../../../assets/undraw_reviews_lp8w.svg';
-// import DreamerPerson from '../../../../assets/undraw_dreamer_re_9tua.svg';
-// import SaveMoney from '../../../../assets/undraw_savings_re_eq4w.svg';
-// import BeneficiariesIcon from '../../../../assets/undraw_savings_re_eq4w.svg'; // Ganti dengan ikon yang sesuai - Sepertinya tidak digunakan
-import WorkersIcon from '../../../../assets/pekerja.jpg';
-import IndigenousIcon from '../../../../assets/sukuadat.jpg';
-import LocalIcon from '../../../../assets/local_communities.jpg';
-import StakeHolderIcon from '../../../../assets/stakeholders.jpg';
-import GovernmentIcon from '../../../../assets/government.jpg';
+import { motion, useReducedMotion } from 'framer-motion'
+import WorkersIcon from '../../../../assets/pekerja.jpg'
+import IndigenousIcon from '../../../../assets/sukuadat.jpg'
+import LocalIcon from '../../../../assets/local_communities.jpg'
+import StakeHolderIcon from '../../../../assets/stakeholders.jpg'
+import GovernmentIcon from '../../../../assets/government.jpg'
 import Dots from '../../../../assets/dots.png'
 
+const beneficiaries = [
+  {
+    title: 'Workers & Families',
+    description: 'Workers, union members, and their families',
+    icon: WorkersIcon,
+    alt: 'Workers Icon',
+  },
+  {
+    title: 'Local Communities',
+    description: 'Local communities',
+    icon: LocalIcon,
+    alt: 'Local Communities Icon',
+  },
+  {
+    title: 'Indigenous Peoples',
+    description: 'Indigenous peoples’ groups',
+    icon: IndigenousIcon,
+    alt: 'Indigenous Peoples Icon',
+  },
+  {
+    title: 'Industry Players',
+    description: 'Industry players and stakeholders',
+    icon: StakeHolderIcon,
+    alt: 'Industry Players Icon',
+  },
+  {
+    title: 'Government',
+    description: 'Government',
+    icon: GovernmentIcon,
+    alt: 'Government Icon',
+  },
+]
 
 function HomeWhyUs() {
-    return (
-        <>
-            <div id="HomeWhyUs" className='max-w-[1440px] mx-auto px-12 2xl:px-0 py-10' style={{ backgroundImage: `url(${Dots})`, backgroundRepeat: 'repeat', backgroundSize: 'contain' }}>
-                <h2 className="drop-shadow-md text-center text-2xl md:text-3xl lg:text-4xl font-semibold text-[#20311d] py-12">Beneficiaries</h2>
-                <div className="flex flex-wrap justify-center">
-                    {/* Container untuk setiap item beneficiary - mengatur layout grid */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
-                        {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
-                            {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
-                            <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={WorkersIcon} alt="Workers Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Workers & Families</h3>
-                            <p className="text-sm lg:text-base text-center text-slate-600">Workers, union members and their families</p>
-                        </div>
-                    </div>
+  const reduceMotion = useReducedMotion()
 
-                    {/* Container untuk setiap item beneficiary - mengatur layout grid */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
-                        {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
-                            {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
-                            <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={LocalIcon} alt="Local Communities Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Local Communities</h3>
-                            <p className="text-sm lg:text-base text-center text-slate-600">Local communities</p>
-                        </div>
-                    </div>
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: reduceMotion ? 0 : 0.24,
+        delayChildren: reduceMotion ? 0 : 0.12,
+      },
+    },
+  }
 
-                    {/* Container untuk setiap item beneficiary - mengatur layout grid */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
-                         {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
-                             {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
-                            <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={IndigenousIcon} alt="Indigenous Peoples Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Indigenous Peoples</h3>
-                            <p className="text-sm lg:text-base text-center text-slate-600">Indigenous peoples’ groups</p>
-                        </div>
-                    </div>
+  const cardVariants = {
+    hidden: reduceMotion
+      ? { opacity: 0 }
+      : {
+          opacity: 0,
+          y: 40,
+          scale: 0.96,
+          filter: 'blur(5px)',
+        },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: 'blur(0px)',
+      transition: {
+        duration: reduceMotion ? 0.01 : 0.95,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  }
 
-                    {/* Container untuk setiap item beneficiary - mengatur layout grid */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
-                         {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
-                            {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
-                            <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={StakeHolderIcon} alt="Industry Players Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Industry Players</h3>
-                            <p className="text-sm lg:text-base text-center text-slate-600">Industry players and stakeholders</p>
-                        </div>
-                    </div>
+  const iconVariants = {
+    hidden: reduceMotion
+      ? { opacity: 0 }
+      : { opacity: 0, y: 18, scale: 0.92 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: reduceMotion ? 0.01 : 0.8,
+        ease: 'easeOut',
+      },
+    },
+  }
 
-                    {/* Container untuk setiap item beneficiary - mengatur layout grid */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 p-4 my-8 md:my-10 lg:my-12">
-                         {/* beneficiary-card: Ini adalah div yang menampilkan konten sebagai kartu. Diberi background, padding, sudut membulat (rounded), dan shadow */}
-                        <div className="beneficiary-card flex flex-col items-center bg-[#ffffff] p-6 rounded-lg shadow-md">
-                            {/* Gambar ikon beneficiary, ukurannya sedikit diperbesar (h-40) */}
-                            <img className="h-40 mb-8 md:mb-10 lg:mb-12" src={GovernmentIcon} alt="Government Icon" />
-                            <h3 className="text-lg lg:text-xl text-center font-bold text-[#20311d] mb-4">Government</h3>
-                            <p className="text-sm lg:text-base text-center text-slate-600">Government</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+  return (
+    <div
+      id="HomeWhyUs"
+      className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-12 2xl:px-0 py-10"
+      style={{
+        backgroundImage: `url(${Dots})`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'contain',
+      }}
+    >
+      <motion.div
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
+        whileInView={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: reduceMotion ? 0.01 : 0.8, ease: 'easeOut' }}
+        className="text-center"
+      >
+        <h2 className="drop-shadow-md text-3xl md:text-4xl lg:text-5xl font-semibold text-[#20311d] py-12">
+          Beneficiaries
+        </h2>
+      </motion.div>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
+      >
+        {beneficiaries.map((item, index) => (
+          <motion.div
+            key={item.title}
+            variants={cardVariants}
+            className={`w-full ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+          >
+            <motion.div
+              whileHover={reduceMotion ? undefined : { y: -6, scale: 1.01 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="beneficiary-card flex h-full flex-col items-center bg-white p-6 md:p-7 lg:p-8 rounded-2xl shadow-md ring-1 ring-black/5"
+            >
+              <motion.img
+                variants={iconVariants}
+                src={item.icon}
+                alt={item.alt}
+                className="h-36 md:h-40 w-auto object-contain mb-6 md:mb-8 lg:mb-10"
+              />
+
+              <h3 className="text-lg md:text-xl lg:text-2xl text-center font-bold text-[#20311d] mb-3 md:mb-4">
+                {item.title}
+              </h3>
+
+              <p className="text-sm md:text-base lg:text-lg text-center text-slate-600 leading-relaxed">
+                {item.description}
+              </p>
+            </motion.div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  )
 }
 
-export default HomeWhyUs;
+export default HomeWhyUs

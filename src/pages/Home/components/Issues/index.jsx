@@ -39,7 +39,7 @@ function Issues() { // Renamed component for clarity
                 /> */}
                 {/* Main Title */}
                 <h3 className="text-3xl md:text-4xl font-semibold mt-6 mb-12 text-cyan-800">
-                    Issues addressed by the Foundation
+                    Issues Addressed by the Foundation
                 </h3>
 
                 {/* Issues List Section */}

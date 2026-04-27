@@ -235,3 +235,131 @@ html {
         opacity: 0.5;
     }
 }
+
+@keyframes eco-glow-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+    filter: blur(14px);
+  }
+}
+
+@keyframes eco-shine-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-18deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.08;
+  }
+  45% {
+    opacity: 0.28;
+  }
+  65% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes eco-depth {
+  0%, 100% {
+    box-shadow: 0 10px 22px rgba(32, 48, 18, 0.15);
+  }
+  50% {
+    box-shadow: 0 16px 32px rgba(32, 48, 18, 0.22);
+  }
+}
+
+.eco-cta-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.25)
+  );
+}
+
+.eco-glow {
+  background: radial-gradient(
+    circle,
+    rgba(120, 160, 80, 0.35),
+    rgba(120, 160, 80, 0.18) 40%,
+    transparent 70%
+  );
+  z-index: 0;
+  animation: eco-glow-pulse 4s ease-in-out infinite;
+}
+
+.eco-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.eco-cta::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -50%;
+  width: 42%;
+  height: 150%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(225, 240, 190, 0.1) 28%,
+    rgba(245, 250, 220, 0.42) 50%,
+    rgba(225, 240, 190, 0.1) 72%,
+    transparent 100%
+  );
+  transform: translateX(-160%) skewX(-18deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.eco-cta-loop {
+  animation: eco-depth 4s ease-in-out infinite;
+}
+
+.eco-cta-loop::before {
+  animation: eco-shine-sweep 4.8s ease-in-out infinite;
+}
+
+.group:hover .eco-glow {
+  opacity: 0.75;
+  transform: scale(1.08);
+}
+
+.eco-cta:hover::before {
+  animation-duration: 2.2s;
+}
+
+@keyframes legalityFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.legality-item-reset {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+
+.legality-item-enter {
+  animation: legalityFadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity, filter;
+}
