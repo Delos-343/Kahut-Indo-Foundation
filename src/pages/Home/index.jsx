@@ -4,7 +4,6 @@ import HomeBackgrounds from './components/Background'
 import HomeContactUs from './components/ContactUs'
 import HomeWhyUs from './components/WhyUs'
 import ReactGA from "react-ga4";
-import HomeLegalities from './components/Legalities'
 import Issues from './components/Issues'
 // import HomeTestimonials from './components/Testimonials'
 
@@ -21,11 +20,7 @@ function Home() {
     <>
       <HomeHero />
       <HomeBackgrounds/>
-      {/* <HomeProducts /> */}
-      <HomeLegalities />
-      {/* <HomePartners /> */}
       <Issues />
-      {/* <HomeTestimonials /> */}
       <HomeWhyUs />
       <HomeContactUs />
     </>
