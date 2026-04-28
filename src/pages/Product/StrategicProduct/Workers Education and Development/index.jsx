@@ -1,15 +1,15 @@
 import React from "react";
 
 const educationPrograms = [
-  "Diploma Scholarship (Bachelor Degree) for Union Officials",
-  "Trade Union Capacity Building in Organizing & Leadership",
-  "Digital Management",
-  "Workers Housing Development",
-  "Boarding accommodation for plantation workers children in primary/secondary schools & soft skills development",
-  "Creches / childcare",
-  "Workers' night courses",
-  "Pre-retirement orientation courses",
-  "Post-termination orientation courses",
+  "Higher Education Scholarship Support for Union Officials",
+  "Trade Union Organizing and Leadership Development",
+  "Digital Administration and Management Enhancement",
+  "Workers’ Housing Development Initiative",
+  "Primary Education and Soft Skills Learning for Workers’ Children",
+  "Creche and Childcare Support Services",
+  "Evening Learning Programs for Workers",
+  "Pre-Retirement Orientation and Planning",
+  "Post-Termination Transition Support Programs",
 ];
 
 function WorkersEducation() {

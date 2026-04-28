@@ -18,10 +18,10 @@ const PlaceholderIcon = () => (
 
 function Issues() {
   const issues = [
-    'Lack of clarity in decision-making processes',
-    'Slow development and adoption of new initiatives',
-    'Difficulty coordinating multi-stakeholder efforts',
-    'Limited funding for sustainable ecosystem programs',
+    'Dire need for transparency and inclusive participation in decision-making',
+    'Slow progress in implementing worker- and community-centered initiatives',
+    'Challenges in coordinating workers, communities, industry, and other stakeholders',
+    'Limited resources to sustain capacity-building and local economic programs',
   ]
 
   return (
