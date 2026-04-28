@@ -126,12 +126,17 @@ function Navbar() {
 
                                         {isStrategicProgramSubmenuOpen && (
                                             <div className="absolute left-full top-0 ml-px w-auto bg-white rounded-md shadow-lg py-1 z-40">
-                                                <Link to="/product/strategic-program/ecosystem" className={desktopNestedSubmenuItemClasses}>Program Ecosystem</Link>
-                                                <Link to="/product/strategic-program/workers-dev" className={desktopNestedSubmenuItemClasses}>Workers Education & Development</Link>
-                                                <Link to="/product/strategic-program/industrial-training" className={desktopNestedSubmenuItemClasses}>Industrial Capacity Building & Vocational Trainings</Link>
-                                                <Link to="/product/strategic-program/fund-mgmt" className={desktopNestedSubmenuItemClasses}>Fund and Asset Management</Link>
-                                                <Link to="/product/strategic-program/ecolabel-env" className={desktopNestedSubmenuItemClasses}>Ecolabel, Climate, Green Jobs & Environment</Link>
-                                                <Link to="/product/strategic-program/legal-adr" className={desktopNestedSubmenuItemClasses}>Legal Aid & Alternative Dispute Resolution</Link>
+
+                                                <Link to="/product/strategic-program/ecosystem" className={desktopNestedSubmenuItemClasses}> Program Ecosystem </Link>
+
+                                                <Link to="/product/strategic-program/workers-dev" className={desktopNestedSubmenuItemClasses}> Workers Education & Development </Link>
+
+                                                <Link to="/product/strategic-program/industrial-training" className={desktopNestedSubmenuItemClasses}> Industrial Capacity Building & Vocational Trainings </Link>
+
+                                                <Link to="/product/strategic-program/ecolabel-env" className={desktopNestedSubmenuItemClasses}> Ecolabel, Climate, Green Jobs & Environment </Link>
+
+                                                <Link to="/product/strategic-program/legal-adr" className={desktopNestedSubmenuItemClasses}> Legal Aid & Alternative Dispute Resolution </Link>
+
                                             </div>
                                         )}
                                     </div>
@@ -184,8 +189,6 @@ function Navbar() {
                         <Link to="/product/strategic-program/workers-dev" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Workers Edu & Development </Link>
 
                         <Link to="/product/strategic-program/industrial-training" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Industrial Training </Link>
-
-                        <Link to="/product/strategic-program/fund-mgmt" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Fund & Asset Management </Link>
 
                         <Link to="/product/strategic-program/ecolabel-env" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Ecolabel & Environment </Link>
 
