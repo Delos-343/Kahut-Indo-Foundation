@@ -2,8 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './routes/index.jsx'
-import Navbar from './components/Navbar/index.jsx'
-import Footer from './components/Footer/index.jsx'
+import { Navbar, Footer } from './atoms'
 import ScrollToTop from './utils/ScrollToTop/index.jsx';
 import ReactGA from "react-ga4";
 import './index.css'
