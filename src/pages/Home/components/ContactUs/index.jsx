@@ -80,19 +80,6 @@ function HomeContactUs() {
         },
     }
 
-    const swirlCommon = {
-        initial: { opacity: 0, scale: 0.9 },
-        animate: {
-            opacity: [0, 1, 0.95, 1],
-            scale: [0.95, 1.02, 1, 1.02],
-        },
-        transition: {
-            duration: 2.2,
-            repeat: Infinity,
-            ease: 'easeInOut',
-        },
-    }
-
     return (
         <div
             id="HomeContactUs"
@@ -109,7 +96,6 @@ function HomeContactUs() {
 
             <div className="max-w-[1440px] mx-auto relative z-10">
                 <div className="py-16 md:py-20 lg:py-24 px-6 sm:px-10 md:px-12 2xl:px-0">
-                    {/* HEADER */}
                     <div className="md:flex items-end justify-between gap-10">
                         <div className="md:w-2/3">
                             <h2 className="text-2xl md:text-3xl lg:text-4xl text-indigo-950 font-semibold py-6 md:py-8 lg:py-10">
@@ -136,7 +122,6 @@ function HomeContactUs() {
                         </div>
                     </div>
 
-                    {/* CARDS */}
                     <div className="mt-10 grid gap-5 lg:grid-cols-3">
                         {contactCards.map((card) => {
                             const Wrapper = card.external ? 'a' : Link
@@ -164,124 +149,116 @@ function HomeContactUs() {
                                         animate="rest"
                                         whileHover="hover"
                                     >
-                                        {/* WIND LAYER */}
+                                        {/* STRONGER WIND FIELD */}
                                         <div className="pointer-events-none absolute inset-0 overflow-hidden">
                                             <div
                                                 className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100"
                                                 style={{
                                                     background:
-                                                        'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(198,196,102,0.16), transparent 38%), radial-gradient(circle at calc(var(--mouse-x) + 60px) calc(var(--mouse-y) - 25px), rgba(109,140,101,0.14), transparent 22%), radial-gradient(circle at calc(var(--mouse-x) - 40px) calc(var(--mouse-y) + 30px), rgba(255,255,255,0.32), transparent 24%)',
+                                                        'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(198,196,102,0.18), transparent 34%), radial-gradient(circle at calc(var(--mouse-x) + 64px) calc(var(--mouse-y) - 28px), rgba(109,140,101,0.18), transparent 18%), radial-gradient(circle at calc(var(--mouse-x) - 44px) calc(var(--mouse-y) + 30px), rgba(255,255,255,0.38), transparent 20%)',
                                                 }}
                                             />
 
                                             <motion.div
                                                 className="absolute inset-0 opacity-0 group-hover:opacity-100"
                                                 initial={false}
-                                                animate={
-                                                    reduceMotion
-                                                        ? { opacity: 0 }
-                                                        : { opacity: 1 }
-                                                }
+                                                animate={reduceMotion ? { opacity: 0 } : { opacity: 1 }}
                                                 transition={{
                                                     duration: 0.9,
                                                     ease: [0.16, 1, 0.3, 1],
                                                 }}
                                             >
                                                 <motion.span
-                                                    className="absolute -left-6 top-1/2 h-20 w-56 -translate-y-1/2 rounded-full border border-[#6d8c65]/30 border-r-transparent border-l-transparent blur-[0.3px]"
+                                                    className="absolute -left-10 top-[28%] h-28 w-72 -translate-y-1/2 rounded-full border border-[#6d8c65]/38 border-r-transparent border-l-transparent blur-[0.2px]"
                                                     animate={
                                                         reduceMotion
                                                             ? {}
                                                             : {
-                                                                  rotate: [8, 18, 8, -6, 8],
-                                                                  x: [0, 10, 18, 10, 0],
-                                                                  y: [0, -5, 2, -3, 0],
+                                                                  rotate: [8, 20, 9, -6, 8],
+                                                                  x: [0, 14, 28, 16, 0],
+                                                                  y: [0, -8, 4, -4, 0],
                                                               }
                                                     }
                                                     transition={{
-                                                        duration: 4.8,
+                                                        duration: 4.2,
                                                         repeat: Infinity,
                                                         ease: 'easeInOut',
                                                     }}
                                                 />
                                                 <motion.span
-                                                    className="absolute left-8 top-[38%] h-24 w-72 -translate-y-1/2 rounded-full border border-[#c4c466]/35 border-t-transparent border-b-transparent blur-[0.2px]"
+                                                    className="absolute -left-4 top-[52%] h-24 w-80 -translate-y-1/2 rounded-full border border-[#c4c466]/42 border-t-transparent border-b-transparent blur-[0.15px]"
                                                     animate={
                                                         reduceMotion
                                                             ? {}
                                                             : {
-                                                                  rotate: [-12, -2, 10, 0, -12],
-                                                                  x: [0, 14, 24, 10, 0],
-                                                                  y: [0, 4, -4, 2, 0],
+                                                                  rotate: [-14, -4, 12, 0, -14],
+                                                                  x: [0, 18, 30, 14, 0],
+                                                                  y: [0, 6, -3, 3, 0],
                                                               }
                                                     }
                                                     transition={{
-                                                        duration: 5.6,
+                                                        duration: 5.0,
                                                         repeat: Infinity,
                                                         ease: 'easeInOut',
                                                     }}
                                                 />
                                                 <motion.span
-                                                    className="absolute -right-10 top-[62%] h-24 w-64 -translate-y-1/2 rounded-full border border-white/45 border-r-transparent border-l-transparent blur-[0.2px]"
+                                                    className="absolute -right-14 top-[68%] h-28 w-72 -translate-y-1/2 rounded-full border border-white/55 border-r-transparent border-l-transparent blur-[0.2px]"
                                                     animate={
                                                         reduceMotion
                                                             ? {}
                                                             : {
-                                                                  rotate: [14, 4, -10, 2, 14],
-                                                                  x: [0, -14, -24, -10, 0],
-                                                                  y: [0, -3, 4, -2, 0],
+                                                                  rotate: [16, 6, -10, 3, 16],
+                                                                  x: [0, -16, -30, -14, 0],
+                                                                  y: [0, -5, 5, -2, 0],
                                                               }
                                                     }
                                                     transition={{
-                                                        duration: 6.2,
+                                                        duration: 5.8,
                                                         repeat: Infinity,
                                                         ease: 'easeInOut',
                                                     }}
                                                 />
                                                 <motion.span
-                                                    className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#6d8c65]/18 border-t-transparent border-b-transparent blur-[0.15px]"
+                                                    className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#6d8c65]/22 border-t-transparent border-b-transparent"
                                                     animate={
                                                         reduceMotion
                                                             ? {}
-                                                            : {
-                                                                  rotate: [0, 360],
-                                                              }
+                                                            : { rotate: [0, 360] }
                                                     }
                                                     transition={{
-                                                        duration: 12,
+                                                        duration: 10,
                                                         repeat: Infinity,
                                                         ease: 'linear',
                                                     }}
                                                 />
                                                 <motion.span
-                                                    className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6d8c65]/10 border-l-transparent border-r-transparent"
+                                                    className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6d8c65]/12 border-l-transparent border-r-transparent"
                                                     animate={
                                                         reduceMotion
                                                             ? {}
-                                                            : {
-                                                                  rotate: [0, -360],
-                                                              }
+                                                            : { rotate: [0, -360] }
                                                     }
                                                     transition={{
-                                                        duration: 18,
+                                                        duration: 16,
                                                         repeat: Infinity,
                                                         ease: 'linear',
                                                     }}
                                                 />
                                             </motion.div>
 
-                                            {/* WIND PARTICLES */}
+                                            {/* LEAF-LIKE GUSTS */}
                                             <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100">
-                                                {[...Array(6)].map((_, index) => {
-                                                    const left = [18, 30, 42, 58, 70, 82][index]
-                                                    const top = [24, 38, 18, 62, 45, 72][index]
-                                                    const duration = [4.8, 5.6, 6.2, 5.1, 6.7, 5.9][index]
-                                                    const delay = [0, 0.3, 0.6, 0.15, 0.45, 0.75][index]
+                                                {[...Array(8)].map((_, index) => {
+                                                    const left = [10, 18, 28, 40, 56, 68, 78, 88][index]
+                                                    const top = [22, 58, 35, 18, 47, 66, 28, 74][index]
+                                                    const duration = [4.8, 5.2, 6.0, 5.6, 6.4, 5.1, 6.8, 5.9][index]
+                                                    const delay = [0, 0.2, 0.45, 0.1, 0.35, 0.55, 0.75, 0.15][index]
 
                                                     return (
                                                         <motion.span
                                                             key={index}
-                                                            className="absolute h-1.5 w-1.5 rounded-full bg-[#6d8c65]/45 blur-[0.4px]"
+                                                            className="absolute h-2.5 w-1.5 rounded-full bg-[#6d8c65]/55 blur-[0.15px]"
                                                             style={{
                                                                 left: `${left}%`,
                                                                 top: `${top}%`,
@@ -290,10 +267,11 @@ function HomeContactUs() {
                                                                 reduceMotion
                                                                     ? {}
                                                                     : {
-                                                                          x: [0, 14, 30, 16, 0],
-                                                                          y: [0, -10, 4, 12, 0],
-                                                                          opacity: [0, 1, 0.7, 0.95, 0],
-                                                                          scale: [0.8, 1.1, 0.95, 1, 0.8],
+                                                                          x: [0, 12, 26, 18, 0],
+                                                                          y: [0, -10, 4, 14, 0],
+                                                                          rotate: [0, 18, 36, 22, 0],
+                                                                          opacity: [0, 1, 0.9, 1, 0],
+                                                                          scale: [0.7, 1, 0.9, 1, 0.7],
                                                                       }
                                                             }
                                                             transition={{
@@ -308,7 +286,6 @@ function HomeContactUs() {
                                             </div>
                                         </div>
 
-                                        {/* CONTENT */}
                                         <div className="relative z-10">
                                             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#6d8c65] transition-colors duration-700 group-hover:text-[#44613f]">
                                                 {card.title}
