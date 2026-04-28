@@ -169,7 +169,7 @@ function Navbar() {
 
                 {/* Mobile Menu unchanged */}
                 <div className={`fixed left-0 right-0 top-16 z-40 overflow-y-auto transition-all duration-300 lg:hidden ${isOpen ? 'bottom-0 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
-                    <div className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-[#C4C466] to-white px-6 md:px-12 py-4 text-slate-100">
+                    <div className="min-h-[calc(100vh-4rem)] bg-gradient-to-b from-[#C4C466] to-white px-6 md:px-12 py-4 text-green-600">
 
                         <Link to="/" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Home </Link>
 
@@ -192,7 +192,7 @@ function Navbar() {
                         <Link to="/product/strategic-program/legal-adr" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Legal Aid & Dispute </Link>
 
                         <Link to="/contact-us" className={mobileNavLinkClasses} onClick={handleMobileLinkClick}> Contact Us </Link>
-                        
+
                     </div>
                 </div>
             </div>
